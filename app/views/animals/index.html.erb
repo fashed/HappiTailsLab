@@ -1,0 +1,9 @@
+<h2>Our animals</h2>
+
+<ul>
+  <% @animals.each do |a| %>
+    <li>
+      <%= link_to a.name, [@shelter, a] %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,8 @@
+<%= link_to "All Shelters", shelters_path %>
+<h1>Add a new animal to <%= @shelter.name %></h1>
+<%=form_for [@shelter, @animal] do |f| %>
+  <p>Name: <%= f.text_field :name %></p>
+  <p>Species: <%= f.text_field :species %></p>
+  <p>Photo: <%= f.text_field :photo %></p>
+  <p><%= f.submit %></p>
+<% end %>

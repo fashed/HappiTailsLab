@@ -1,0 +1,11 @@
+<h1><%=@client.name %> </h1>
+<img src="<%=@client.photo%>">
+
+<h2>Shelter: <%= link_to @client.shelter.name, @client.shelter %></h2>
+<h2><%= @client.name %>'s Animals:</h2>
+
+<ul>
+<% @client.animals.each do |a| %>
+  <li><%= link_to a.name, [@shelter, a] %></li>
+<% end %>
+</ul>
