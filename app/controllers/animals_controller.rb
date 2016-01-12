@@ -7,11 +7,6 @@ class AnimalsController < ApplicationController
 	def show
 		@shelter = Shelter.find(params[:shelter_id])
 		@animal= Animal.find(params[:id])
-
-		def has_owner
-		@shelter = Shelter.find(params[:shelter_id])
-		@animal= Animal.find(params[:id])
-		end
 	end
 
 	def new
@@ -35,5 +30,15 @@ class AnimalsController < ApplicationController
 		params.require(:animal).permit(:name, :species, :photo)
 	end
 
+	def adopt
+		@shelter = Shelter.find(params[:shelter_id])
+		@animal= Animal.find(params[:animal_id])
+		@clients = @shelter.clients
+	end
+
+	def donate
+		@shelter = Shelter.find(params[:shelter_id])
+		@animal= Animal.find(params[:animal_id])
+	end
 
 end

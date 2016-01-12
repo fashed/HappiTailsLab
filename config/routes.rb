@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   resources :shelters do
-    resources :clients
+    resources :clients do
+      resources :animals
+    end
     resources :animals do
       get 'adopt' => 'animals#adopt'
+      get 'donate' => "animals#donate"
     end
   end
 

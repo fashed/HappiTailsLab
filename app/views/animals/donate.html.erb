@@ -1,0 +1,16 @@
+<h1>Donate <%=@animal.name %></h1>
+<p>Shelter to accept <%=@animal.name %>:</p>
+
+<%= form_for [@shelter, @animal] do |f| %>
+
+<p>
+<select name="shelter_id">
+  <%= @shelter.each do |s| %>
+    <option value="<%= s.id %>"><%= s.name %></option>
+  <% end %>
+</select>
+</p>
+
+<p><%= f.submit %></p>
+
+<% end %>

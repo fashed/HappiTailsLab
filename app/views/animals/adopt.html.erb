@@ -1,0 +1,16 @@
+<h1>Adopt <%=@animal.name %></h1>
+<p>Client to adopt <%=@animal.name %>:</p>
+
+<%= form_for [@shelter, @animal] do |f| %>
+
+<p>
+  <select name="client_id">
+    <%= @clients.each do |c| %>
+      <option value="<%= c.id %>"><%= c.name %></option>
+    <% end %>
+  </select>
+</p>
+
+<p><%= f.submit %></p>
+
+<% end %>
