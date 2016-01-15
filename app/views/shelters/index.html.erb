@@ -1,7 +1,7 @@
 <p><%= link_to "All Shelters", shelters_path %></p>
 
 <p>
-	<%@shelters.each do |s|%>
+	<% @shelters.each do |s|%>
 		<%= link_to s.name, s %>
 	<% end %>
 </p>
